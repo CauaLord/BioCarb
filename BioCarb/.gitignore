@@ -1,0 +1,5 @@
+node_modules/
+dev-out/
+dist/tmp/
+.DS_Store
+*.log

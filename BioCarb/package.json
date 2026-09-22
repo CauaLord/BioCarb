@@ -1,0 +1,26 @@
+{
+  "name": "biocarb-site",
+  "version": "1.0.0",
+  "description": "Site do projeto BioCarb, Inova Week 2026 (UVV)",
+  "scripts": {
+    "dev": "node dev.mjs",
+    "build": "node build.mjs",
+    "typecheck": "tsc"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "framer-motion": "^11.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}
