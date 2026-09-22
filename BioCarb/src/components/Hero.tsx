@@ -93,14 +93,6 @@ export function Hero() {
   return (
     <header className="hero" id="inicio">
       <div className="hero-texto">
-        <motion.p
-          className="hero-sobre"
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          BioCarb, projeto do Inova Week 2026 da UVV
-        </motion.p>
         <h1 className="hero-titulo">
           {linhas.map((l, i) => (
             <span className="linha" key={l}>
@@ -128,7 +120,7 @@ export function Hero() {
               Ver como funciona
             </a>
             <a className="link-sublinhado" href="#contato">
-              Quero testar no meu efluente
+              Quero saber mais
             </a>
           </div>
         </motion.div>

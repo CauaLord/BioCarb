@@ -12,7 +12,7 @@ await build({
   outdir: "dist/tmp",
   define: { "process.env.NODE_ENV": '"production"' },
   jsx: "automatic",
-  loader: { ".css": "css" },
+  loader: { ".css": "css", ".png": "dataurl" },
   logLevel: "info",
 });
 const js = readFileSync("dist/tmp/main.js", "utf8").replace(/<\/script/g, "<\\/script");

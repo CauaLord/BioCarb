@@ -22,6 +22,7 @@ const ctx = await esbuild.context({
   outdir: "dev-out",
   sourcemap: true,
   jsx: "automatic",
+  loader: { ".png": "dataurl" },
   define: { "process.env.NODE_ENV": '"development"' },
   logLevel: "info",
 });

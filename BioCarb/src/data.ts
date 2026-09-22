@@ -9,15 +9,6 @@ export const CONTATO = {
   email: "contato@biocarb.com.br",
 };
 
-export const nav = [
-  { id: "problema", label: "Problema" },
-  { id: "processo", label: "Processo" },
-  { id: "modelo", label: "Modelo" },
-  { id: "roadmap", label: "Roadmap" },
-  { id: "equipe", label: "Equipe" },
-  { id: "contato", label: "Contato" },
-];
-
 export const objetivos = [
   {
     titulo: "Matéria-prima que já existe",
@@ -67,10 +58,10 @@ export const etapas = [
       "O excesso de solução escorre e o material volta para a estufa. Se entrasse úmido no forno, carbonizaria de forma irregular.",
   },
   {
-    titulo: "Ativação no forno mufla",
-    dado: "400 a 600 °C, contra 700 a 1.000 °C",
+    titulo: "Ativação sem oxigênio",
+    dado: "Assar sem oxigênio, de 400 a 600 °C",
     texto:
-      "É a etapa que usa a mufla da UVV. A ativação química roda entre 400 e 600 °C, bem abaixo dos 700 a 1.000 °C da ativação física, e essa economia de energia é o nosso principal argumento técnico. Vamos testar o mesmo lote em temperaturas diferentes. O carvão esfria antes de qualquer manuseio.",
+      "A biomassa impregnada é assada entre 400 e 600 °C em um ambiente sem oxigênio. Esse cuidado é essencial: se houver oxigênio, o carvão queima e vira cinza. Sem ele, o material carboniza e abre os poros que fazem a adsorção. O carvão esfria antes de qualquer manuseio.",
   },
   {
     titulo: "Lavagem e neutralização",
@@ -97,8 +88,8 @@ export const etapas = [
   },
   {
     titulo: "Embalagem e entrega",
-    dado: "Sacos de 1 kg e 5 kg",
-    texto: "Lote aprovado vai para as embalagens de 1 kg e 5 kg e segue para o cliente ou para o kit de demonstração.",
+    dado: "Embalado e selado",
+    texto: "Lote aprovado é embalado e selado, e segue para o cliente ou para o kit de demonstração.",
   },
 ];
 
@@ -248,18 +239,4 @@ export const metasAno1 = [
   "Processo padronizado e replicável",
   "Um case real documentado",
   "Marca com presença digital ativa",
-];
-
-export const pendencias = [
-  "A área superficial do nosso carvão ainda vai ser medida por BET, depois do lote piloto.",
-  "A qualidade pode variar entre lotes enquanto o processo não estiver padronizado.",
-  "A coleta depende da safra, então a oferta de caroço muda ao longo do ano.",
-  "A escala inicial é limitada pelo espaço e pela agenda do laboratório da UVV.",
-];
-
-export const equipe = [
-  { nome: "Cauã Lordes", papel: "Liderança e parcerias", faz: "Articulação com o laboratório da UVV e relação com fornecedores locais." },
-  { nome: "Caio Zouain", papel: "Estratégia e operação", faz: "Plano de negócios, custos e organização." },
-  { nome: "Arthur Daleprani", papel: "Pesquisa e produção", faz: "Processo de ativação com H₃PO₄, testes de biomassa e qualidade." },
-  { nome: "Marcos Antônio", papel: "Comercial e operações", faz: "Mapeamento de clientes e abordagem comercial." },
 ];

@@ -264,7 +264,7 @@ function Etapa4({ lp }: LP) {
   );
 }
 
-/* ---------- 5. Mufla ---------- */
+/* ---------- 5. Ativação sem oxigênio ---------- */
 function Etapa5({ lp }: LP) {
   const brasa = useTransform(lp, [0, 0.45, 0.75, 0.95], ["#2B2825", K.fogo, "#FFB35C", "#3A3530"]);
   const halo = useTransform(lp, [0.2, 0.6, 0.8, 1], [0, 0.55, 0.55, 0]);
@@ -282,7 +282,7 @@ function Etapa5({ lp }: LP) {
       <motion.circle cx="135" cy="150" r="54" style={{ fill: K.fogo, opacity: halo }} />
       <motion.path d="M100 160 H170 L162 182 H108 Z" style={{ fill: brasa }} />
       <text x="135" y="210" textAnchor="middle" className="ilu-rot">
-        forno mufla da UVV
+        ambiente sem oxigênio
       </text>
       {/* mostrador */}
       <path d="M262 150 A58 58 0 0 1 378 150" stroke={K.linha} strokeWidth="10" {...traco} />
@@ -497,6 +497,8 @@ function Etapa10({ lp }: LP) {
   const jato = useTransform(lp, [0, 0.05, 0.5, 0.56], [0, 1, 1, 0]);
   const jx = useTransform(lp, [0.05, 0.3, 0.32, 0.55], [115, 115, 225, 225]);
   const van = useTransform(lp, [0.6, 1], [-150, 420]);
+  const selo1 = useTransform(lp, [0.36, 0.42], [0, 1]);
+  const selo2 = useTransform(lp, [0.56, 0.62], [0, 1]);
   return (
     <svg viewBox="0 0 400 360">
       <path d="M100 30 H240 L200 70 H140 Z" fill={K.linha} />
@@ -520,11 +522,11 @@ function Etapa10({ lp }: LP) {
       <g clipPath="url(#s2)">
         <motion.rect x="178" width="94" fill={K.graos} style={{ y: f2y, height: f2 }} />
       </g>
-      <text x="115" y="238" textAnchor="middle" className="ilu-num">
-        1 kg
-      </text>
-      <text x="225" y="238" textAnchor="middle" className="ilu-num">
-        5 kg
+      {/* selagem */}
+      <motion.path d="M89 134 H141" stroke={K.fibra} strokeWidth="3" strokeDasharray="4 3" style={{ opacity: selo1 }} />
+      <motion.path d="M192 100 H258" stroke={K.fibra} strokeWidth="3" strokeDasharray="4 3" style={{ opacity: selo2 }} />
+      <text x="175" y="238" textAnchor="middle" className="ilu-rot">
+        embalado e selado
       </text>
       <line x1="0" y1="330" x2="400" y2="330" stroke={K.linha} strokeWidth="2" strokeDasharray="12 8" />
       <g clipPath="url(#palco10)">
@@ -616,9 +618,8 @@ export function Process() {
     <section className="processo" id="processo" aria-labelledby="processo-titulo">
       <div className="processo-cabeca">
         <h2 id="processo-titulo" className="titulo-secao">
-          Da feira ao filtro em dez etapas
+          Da feira ao filtro em dez etapas:
         </h2>
-        <p className="texto-apoio">Tudo acontece no laboratório de Química da UVV, com resíduo que chega da feira.</p>
       </div>
 
       {/* Versão acessível: lista completa para leitores de tela */}

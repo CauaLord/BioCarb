@@ -1,23 +1,20 @@
 import { useEffect, useState } from "react";
-import { nav } from "./data";
 import { Particles } from "./components/Particles";
 import { Hero } from "./components/Hero";
 import { Pores } from "./components/Pores";
 import { Process } from "./components/Process10";
 import {
-  Problema, Ideia, Saida, Aplicacoes, Diferenciais, Modelo, Cadeia, Roadmap, Pendencias, Equipe, Contato, Rodape,
+  Problema, Ideia, Saida, Aplicacoes, Diferenciais, Modelo, Cadeia, Roadmap, Contato, Rodape,
 } from "./components/Sections";
+import logo from "./assets/logo-biocarb.png";
+import logoEscuro from "./assets/logo-biocarb-escuro.png";
 
+// Logo original (Carb em branco) no fundo escuro; nas seções claras troca pela versão com Carb escuro
 function Marca() {
   return (
     <a href="#inicio" className="marca" aria-label="BioCarb, voltar ao início">
-      <svg viewBox="0 0 28 28" aria-hidden="true">
-        <path d="M6 9 C7 5 12 3 16 4 C21 5 24 9 23 14 C22 19 19 23 14 24 C9 25 5 21 4 17 C3 14 5 12 6 9 Z" fill="currentColor" />
-        <circle cx="11" cy="12" r="1.8" className="furo" />
-        <circle cx="16.5" cy="10.5" r="1.3" className="furo" />
-        <circle cx="15" cy="17" r="2.2" className="furo" />
-      </svg>
-      <span>BioCarb</span>
+      <img src={logo} alt="" className="marca-clara" />
+      <img src={logoEscuro} alt="" className="marca-escura" />
     </a>
   );
 }
@@ -25,12 +22,6 @@ function Marca() {
 function Nav() {
   const [claro, setClaro] = useState(false);
   const [rolou, setRolou] = useState(false);
-  const [aberto, setAberto] = useState(false);
-  useEffect(() => {
-    const fechar = (e: KeyboardEvent) => e.key === "Escape" && setAberto(false);
-    window.addEventListener("keydown", fechar);
-    return () => window.removeEventListener("keydown", fechar);
-  }, []);
   useEffect(() => {
     const onScroll = () => {
       const alvo = document.getElementById("aplicacoes");
@@ -43,23 +34,8 @@ function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <nav className={`nav ${claro ? "nav-claro" : ""} ${rolou || aberto ? "nav-rolou" : ""} ${aberto ? "nav-aberto" : ""}`} aria-label="Seções">
+    <nav className={`nav ${claro ? "nav-claro" : ""} ${rolou ? "nav-rolou" : ""}`} aria-label="Principal">
       <Marca />
-      <button
-        type="button"
-        className="nav-botao"
-        aria-expanded={aberto}
-        aria-controls="nav-lista"
-        onClick={() => setAberto((a) => !a)}
-      >
-        <span className="nav-icone" aria-hidden="true"><i /><i /></span>
-        {aberto ? "Fechar" : "Menu"}
-      </button>
-      <ul id="nav-lista">
-        {nav.map((n) => (
-          <li key={n.id}><a href={`#${n.id}`} onClick={() => setAberto(false)}>{n.label}</a></li>
-        ))}
-      </ul>
     </nav>
   );
 }
@@ -127,8 +103,6 @@ export function App() {
           <Modelo />
           <Cadeia />
           <Roadmap />
-          <Pendencias />
-          <Equipe />
           <Contato />
         </div>
       </main>

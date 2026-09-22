@@ -9,12 +9,11 @@ import {
   personas,
   roadmap,
   metasAno1,
-  pendencias,
-  equipe,
   FASE_ATUAL,
   CONTATO,
 } from "../data";
 import { Truck } from "./Truck";
+import logo from "../assets/logo-biocarb.png";
 
 export function Problema() {
   return (
@@ -255,50 +254,6 @@ export function Roadmap() {
   );
 }
 
-export function Pendencias() {
-  return (
-    <section className="pendencias" aria-labelledby="pend-titulo">
-      <h2 id="pend-titulo" className="titulo-secao">
-        O que ainda não sabemos
-      </h2>
-      <p className="texto-apoio">
-        Quem compra carvão ativado para tratar efluente não troca de fornecedor por promessa. Então a gente prefere mostrar o que ainda falta provar.
-      </p>
-      <ul className="pend-lista">
-        {pendencias.map((p) => (
-          <li key={p}>{p}</li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-export function Equipe() {
-  return (
-    <section className="equipe" id="equipe" aria-labelledby="equipe-titulo">
-      <h2 id="equipe-titulo" className="titulo-secao">
-        Quem está por trás
-      </h2>
-      <p className="texto-apoio">Quatro estudantes da UVV, na disciplina de Inovação e Design Thinking.</p>
-      <ul className="equipe-lista">
-        {equipe.map((m) => (
-          <li key={m.nome}>
-            <span className="inicial" aria-hidden="true">
-              {m.nome
-                .split(" ")
-                .map((n) => n[0])
-                .join("")}
-            </span>
-            <h3>{m.nome}</h3>
-            <p className="papel">{m.papel}</p>
-            <p>{m.faz}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
 export function Contato() {
   const zap = `https://wa.me/${CONTATO.whatsapp}?text=${encodeURIComponent("Oi! Vi o site da BioCarb e quero saber sobre o teste gratuito.")}`;
   return (
@@ -328,9 +283,12 @@ export function Contato() {
 export function Rodape() {
   return (
     <footer className="rodape">
-      <p className="rodape-marca">BioCarb</p>
-      <p>Carvão ativado a partir de resíduo capixaba. Projeto do Inova Week 2026, Universidade Vila Velha.</p>
-      <p className="rodape-dica">Apresentando? Aperte a tecla A para a página rolar sozinha e Esc para parar.</p>
+      <img className="rodape-marca" src={logo} alt="BioCarb" />
+      <p>
+        Carvão ativado sustentável produzido a partir do reaproveitamento de resíduos naturais. Uma iniciativa de economia circular para o Espírito
+        Santo.
+      </p>
+      <p className="rodape-copy">© 2026 BioCarb • Inova Week UVV • Produção Sustentável de Carvão Ativado</p>
     </footer>
   );
 }

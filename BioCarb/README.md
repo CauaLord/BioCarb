@@ -57,8 +57,9 @@ npm run typecheck
 | Contador do caminhão | `src/components/Truck.tsx` |
 | Zoom dentro do grão | `src/components/Pores.tsx` |
 | As 10 etapas e suas animações | `src/components/Process10.tsx` |
-| Demais seções (Canvas, roadmap, equipe, contato...) | `src/components/Sections.tsx` |
-| Menu, ordem das seções, tecla A | `src/App.tsx` |
+| Demais seções (Canvas, roadmap, contato, rodapé...) | `src/components/Sections.tsx` |
+| Barra com o logo, ordem das seções, tecla A | `src/App.tsx` |
+| Logo (versão original e versão com "Carb" escuro para fundo claro) | `src/assets/` |
 | Título da aba, fontes, metatags | `index.template.html` |
 
 ## Atalho de apresentação
